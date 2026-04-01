@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - About</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔹 Navbar -->
+<nav>
+    <h2 class="logo">MyPortfolio</h2>
+
+    <!-- Hidden checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Hamburger icon -->
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+
+    <button id="darkModeToggle">🌙</button>
+</nav>
+
+<!-- 🔹 Header -->
+<header>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Computer Engineering Student | Web Developer</p>
+</header>
+
+<!-- 🔹 Main Content (Important for Dynamic Upgrade) -->
+<main>
+    <section id="about">
+
+    <!-- 🧑 Profile Card -->
+    <div class="profile-card">
+        <img src="profile.jpeg" alt="My Photo">
+        <h2>Harsh M Kolte</h2>
+        <p>Computer Engineering Student</p>
+    </div>
+
+    <h2>About Me</h2>
+
+    <p>
+        Hello! I am a passionate Computer Engineering student with a strong
+        interest in Web Development, Data Analysis, and Software Development.
+    </p>
+
+    <p>
+        I enjoy building real-world projects like dashboards, applications,
+        and responsive websites. I am constantly learning new technologies
+        and improving my skills.
+    </p>
+
+    <p>
+        My goal is to become a skilled software developer and contribute
+        to innovative projects.
+    </p>
+
+</section>
+</main>
+
+<!-- 🔹 Footer -->
+<footer>
+    <p>© 2026 My Portfolio</p>
+
+    <p>
+        🔗 GitHub:
+        <a href="https://github.com/yourusername" target="_blank">
+            github.com/yourusername
+        </a>
+    </p>
+</footer>
+
+
+
+<!-- Dark Mode Script -->
+<script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        toggleBtn.textContent =
+            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+</script>
+
+</body>
+</html>

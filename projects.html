@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Projects</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔹 Navbar -->
+<nav>
+    <h2 class="logo">MyPortfolio</h2>
+
+    <!-- Hidden checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Hamburger icon -->
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+
+    <button id="darkModeToggle">🌙</button>
+</nav>
+
+<!-- 🔹 Header -->
+<header>
+    <h1>My Projects</h1>
+    <p>Some of my work and achievements</p>
+</header>
+
+<!-- 🔹 Main Content -->
+<main>
+<section id="projects">
+
+    <div class="project-card">
+        <h2>Restaurant Dashboard</h2>
+        <p>
+            A data analysis dashboard to analyze restaurant profitability using Python and visualization tools.
+        </p>
+        <p><strong>Tech Used:</strong> Python, Pandas, Matplotlib</p>
+        <a href="https://github.com/kolteharsh09-wq/restaurant-dashboard" target="_blank">
+            🔗 View on GitHub
+        </a>
+    </div>
+
+    <div class="project-card">
+        <h2>WorkMitra App</h2>
+        <p>
+            A platform connecting workers and employers with features like job listings and user interaction.
+        </p>
+        <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+        <a href="https://github.com/yourusername/workmitra" target="_blank">
+            🔗 View on GitHub
+        </a>
+    </div>
+
+    <div class="project-card">
+        <h2>Portfolio Website</h2>
+        <p>
+            A personal portfolio website showcasing my skills, projects, and academic details.
+        </p>
+        <p><strong>Tech Used:</strong> HTML, CSS</p>
+        <a href="https://github.com/yourusername/portfolio" target="_blank">
+            🔗 View on GitHub
+        </a>
+    </div>
+
+</section>
+</main>
+
+<!-- 🔹 Footer -->
+<footer>
+    <p>© 2026 My Portfolio</p>
+
+    <p>
+        🔗 GitHub:
+        <a href="https://github.com/kolteharsh09-wq" target="_blank">
+            github.com/kolteharsh09-wq
+        </a>
+    </p>
+</footer>
+
+<!-- 🔹 JavaScript -->
+<script src="script.js"></script>
+
+<!-- 🌙 Dark Mode Script -->
+<script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        toggleBtn.textContent =
+            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+</script>
+
+</body>
+</html>

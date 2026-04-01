@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Details</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔹 Navbar -->
+<nav>
+    <h2 class="logo">MyPortfolio</h2>
+
+    <!-- Hidden checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Hamburger icon -->
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+
+    <button id="darkModeToggle">🌙</button>
+</nav>
+
+<!-- 🔹 Header -->
+<header>
+    <h1>My Personal Details</h1>
+    <p>Know more about me</p>
+</header>
+
+<!-- 🔹 Main Content -->
+<main>
+    <section id="details">
+
+        <h2>Personal Information</h2>
+
+        <ul class="details-list">
+            <li><strong>Name:</strong>Harsh M Kolte</li>
+            <li><strong>Email:</strong> kolteharsh09@gmail.com</li>
+            <li><strong>Phone:</strong> 8153862301</li>
+            <li><strong>Location:</strong> India</li>
+        </ul>
+
+        <h2>Skills</h2>
+        <ul class="details-list">
+            <li>HTML, CSS</li>
+            <li>JavaScript (Basic)</li>
+            <li>Python</li>
+            <li>Data Analysis</li>
+        </ul>
+
+        <h2>Hobbies</h2>
+        <ul class="details-list">
+            <li>Coding</li>
+            <li>Learning new technologies</li>
+            <li>Travelling</li>
+        </ul>
+
+    </section>
+</main>
+
+<!-- 🔹 Footer -->
+<footer>
+    <p>© 2026 My Portfolio</p>
+
+    <p>
+        🔗 GitHub:
+        <a href="https://github.com/kolteharsh09-wq" target="_blank">
+            github.com/kolteharsh09-wq
+        </a>
+    </p>
+</footer>
+
+<!-- 🔹 JavaScript -->
+<script src="script.js"></script>
+
+<!-- 🌙 Dark Mode Script -->
+<script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        toggleBtn.textContent =
+            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+</script>
+
+</body>
+</html>

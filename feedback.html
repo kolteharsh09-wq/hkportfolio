@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Feedback</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔹 Navbar -->
+<nav>
+    <h2 class="logo">MyPortfolio</h2>
+
+    <!-- Hidden checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Hamburger icon -->
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+
+    <button id="darkModeToggle">🌙</button>
+</nav>
+
+<!-- 🔹 Header -->
+<header>
+    <h1>Feedback Form</h1>
+    <p>Your feedback helps me improve!</p>
+</header>
+
+<!-- 🔹 Main Content -->
+<main>
+<section id="feedback">
+
+    <form id="feedbackForm">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" required>
+            <option value="">Select Rating</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+
+        <label for="message">Feedback:</label>
+        <textarea id="message" rows="4" placeholder="Write your feedback..." required></textarea>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <!-- Success Message -->
+    <p id="successMsg" style="display:none; color:green; margin-top:10px;">
+        ✅ Feedback submitted successfully!
+    </p>
+
+</section>
+</main>
+
+<!-- 🔹 Footer -->
+<footer>
+    <p>© 2026 My Portfolio</p>
+
+    <p>
+        🔗 GitHub:
+        <a href="https://github.com/yourusername" target="_blank">
+            github.com/yourusername
+        </a>
+    </p>
+</footer>
+
+<!-- 🔹 JavaScript -->
+<script src="script.js"></script>
+
+<!-- 🌙 Dark Mode -->
+<script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        toggleBtn.textContent =
+            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+</script>
+
+<!-- ✅ Form Handling -->
+<script>
+    const form = document.getElementById("feedbackForm");
+    const msg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        msg.style.display = "block";
+        form.reset();
+    });
+</script>
+
+</body>
+</html>

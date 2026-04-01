@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Academics</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.tab-btn.active {
+    background: #00adb5;
+    color: white;
+}
+
+/* Content */
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Table */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.result-table th {
+    background: #00adb5;
+    color: white;
+    padding: 10px;
+}
+
+.result-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.result-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <h2 class="logo">MyPortfolio</h2>
+
+    <!-- Hidden checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Hamburger icon -->
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <!-- Menu -->
+    <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+
+    <button id="darkModeToggle">🌙</button>
+</nav>
+
+<header>
+    <h1>Academic Results</h1>
+</header>
+
+<!-- Tabs -->
+<div class="tabs">
+    <button class="tab-btn active" onclick="openTab('sem1')">Sem 1</button>
+    <button class="tab-btn" onclick="openTab('sem2')">Sem 2</button>
+    <button class="tab-btn" onclick="openTab('sem3')">Sem 3</button>
+    <button class="tab-btn" onclick="openTab('sem4')">Sem 4</button>
+    <button class="tab-btn" onclick="openTab('sem5')">Sem 5</button>
+</div>
+
+<!-- SEM 1 -->
+<div id="sem1" class="tab-content active">
+<h2>Semester 1</h2>
+<table class="result-table">
+<tr>
+<th>Subject</th>
+<th>Grade</th>
+</tr>
+<tr><td>Basic Electrical Engineering</td><td>AA</td></tr>
+<tr><td>Basic Mechanical Engineering</td><td>BC</td></tr>
+<tr><td>Environmental Science</td><td>PS</td></tr>
+<tr><td>Mathematics I</td><td>CD</td></tr>
+<tr><td>Programming</td><td>PS</td></tr>
+<tr><td>Physics</td><td>BC</td></tr>
+</table>
+</div>
+
+<!-- SEM 2 -->
+<div id="sem2" class="tab-content">
+<h2>Semester 2</h2>
+<table class="result-table">
+<tr>
+<th>Subject</th>
+<th>Grade</th>
+</tr>
+<tr><td>English</td><td>AB</td></tr>
+<tr><td>Programming for Problem Solving</td><td>BB</td></tr>
+<tr><td>Engineering Graphics</td><td>AA</td></tr>
+<tr><td>Mathematics II</td><td>FF</td></tr>
+<tr><td>Basic Electronics</td><td>BC</td></tr>
+</table>
+</div>
+
+<!-- SEM 3 -->
+<div id="sem3" class="tab-content">
+<h2>Semester 3</h2>
+<table class="result-table">
+<tr>
+<th>Subject</th>
+<th>Grade</th>
+</tr>
+<tr><td>Technical Communication</td><td>BC</td></tr>
+<tr><td>Probability & Statistics</td><td>CC</td></tr>
+<tr><td>Data Structures</td><td>AA</td></tr>
+<tr><td>DBMS</td><td>BB</td></tr>
+<tr><td>Digital Fundamentals</td><td>BC</td></tr>
+</table>
+</div>
+
+<!-- SEM 4 -->
+<div id="sem4" class="tab-content">
+<h2>Semester 4</h2>
+<table class="result-table">
+<tr>
+<th>Subject</th>
+<th>Grade</th>
+</tr>
+<tr><td>Operating System</td><td>BC</td></tr>
+<tr><td>OOP</td><td>AB</td></tr>
+<tr><td>Computer Organization</td><td>BB</td></tr>
+<tr><td>Discrete Mathematics</td><td>BC</td></tr>
+<tr><td>Software Engineering</td><td>CC</td></tr>
+</table>
+</div>
+
+<!-- SEM 5 -->
+<div id="sem5" class="tab-content">
+<h2>Semester 5</h2>
+<table class="result-table">
+<tr>
+<th>Subject</th>
+<th>Grade</th>
+</tr>
+<tr><td>Design Engineering</td><td>AA</td></tr>
+<tr><td>ADA</td><td>AB</td></tr>
+<tr><td>Computer Networks</td><td>BB</td></tr>
+<tr><td>Software Engineering</td><td>BC</td></tr>
+<tr><td>Python for Data Science</td><td>BC</td></tr>
+</table>
+</div>
+
+<!-- JS -->
+<script>
+function openTab(tabId) {
+    let contents = document.querySelectorAll(".tab-content");
+    let buttons = document.querySelectorAll(".tab-btn");
+
+    contents.forEach(c => c.classList.remove("active"));
+    buttons.forEach(b => b.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
