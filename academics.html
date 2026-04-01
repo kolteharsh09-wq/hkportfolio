@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Academics</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
 /* Tabs */
 .tabs {
     display: flex;
@@ -14,27 +20,33 @@
     margin: 20px;
 }
 
-.tab-btn {
+.tabs label {
     padding: 10px 20px;
     margin: 5px;
-    border: none;
+    background: #e5e7eb;
+    border-radius: 20px;
     cursor: pointer;
-    background: #ccc;
-    border-radius: 5px;
+    transition: 0.3s;
 }
 
-.tab-btn.active {
-    background: #00adb5;
+/* Active tab */
+input:checked + label {
+    background: #4f46e5;
     color: white;
 }
 
-/* Content */
+/* Content hidden by default */
 .tab-content {
     display: none;
     padding: 20px;
 }
 
-.tab-content.active {
+/* Show content when selected */
+#sem1:checked ~ .content #content1,
+#sem2:checked ~ .content #content2,
+#sem3:checked ~ .content #content3,
+#sem4:checked ~ .content #content4,
+#sem5:checked ~ .content #content5 {
     display: block;
 }
 
@@ -46,36 +58,46 @@
 }
 
 .result-table th {
-    background: #00adb5;
+    background: #4f46e5;
     color: white;
     padding: 10px;
 }
 
 .result-table td {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
 .result-table tr:nth-child(even) {
-    background: #f9f9f9;
+    background: #f9fafb;
 }
+
+.spi {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.default-msg {
+    text-align: center;
+    margin-top: 20px;
+    color: gray;
+}
+
 </style>
 
 </head>
 
 <body>
 
+<!-- Navbar -->
 <nav>
     <h2 class="logo">MyPortfolio</h2>
 
-    <!-- Hidden checkbox -->
     <input type="checkbox" id="menu-toggle">
-
-    <!-- Hamburger icon -->
     <label for="menu-toggle" class="menu-icon">☰</label>
 
-    <!-- Menu -->
     <ul class="nav-links">
         <li><a href="index.html">About</a></li>
         <li><a href="details.html">Details</a></li>
@@ -91,23 +113,33 @@
     <h1>Academic Results</h1>
 </header>
 
+<!-- Radio Buttons -->
+<input type="radio" name="tabs" id="sem1">
+<input type="radio" name="tabs" id="sem2">
+<input type="radio" name="tabs" id="sem3">
+<input type="radio" name="tabs" id="sem4">
+<input type="radio" name="tabs" id="sem5">
+
 <!-- Tabs -->
 <div class="tabs">
-    <button class="tab-btn active" onclick="openTab('sem1')">Sem 1</button>
-    <button class="tab-btn" onclick="openTab('sem2')">Sem 2</button>
-    <button class="tab-btn" onclick="openTab('sem3')">Sem 3</button>
-    <button class="tab-btn" onclick="openTab('sem4')">Sem 4</button>
-    <button class="tab-btn" onclick="openTab('sem5')">Sem 5</button>
+    <label for="sem1">Sem 1</label>
+    <label for="sem2">Sem 2</label>
+    <label for="sem3">Sem 3</label>
+    <label for="sem4">Sem 4</label>
+    <label for="sem5">Sem 5</label>
 </div>
 
+<!-- Default Message -->
+<p class="default-msg">👉 Select a semester to view results</p>
+
+<!-- Content -->
+<div class="content">
+
 <!-- SEM 1 -->
-<div id="sem1" class="tab-content active">
+<div id="content1" class="tab-content">
 <h2>Semester 1</h2>
 <table class="result-table">
-<tr>
-<th>Subject</th>
-<th>Grade</th>
-</tr>
+<tr><th>Subject</th><th>Grade</th></tr>
 <tr><td>Basic Electrical Engineering</td><td>AA</td></tr>
 <tr><td>Basic Mechanical Engineering</td><td>BC</td></tr>
 <tr><td>Environmental Science</td><td>PS</td></tr>
@@ -115,85 +147,72 @@
 <tr><td>Programming</td><td>PS</td></tr>
 <tr><td>Physics</td><td>BC</td></tr>
 </table>
+<p class="spi">SPI: 8.10</p>
 </div>
 
 <!-- SEM 2 -->
-<div id="sem2" class="tab-content">
+<div id="content2" class="tab-content">
 <h2>Semester 2</h2>
 <table class="result-table">
-<tr>
-<th>Subject</th>
-<th>Grade</th>
-</tr>
+<tr><th>Subject</th><th>Grade</th></tr>
 <tr><td>English</td><td>AB</td></tr>
 <tr><td>Programming for Problem Solving</td><td>BB</td></tr>
 <tr><td>Engineering Graphics</td><td>AA</td></tr>
 <tr><td>Mathematics II</td><td>FF</td></tr>
 <tr><td>Basic Electronics</td><td>BC</td></tr>
 </table>
+<p class="spi">SPI: 7.85</p>
 </div>
 
 <!-- SEM 3 -->
-<div id="sem3" class="tab-content">
+<div id="content3" class="tab-content">
 <h2>Semester 3</h2>
 <table class="result-table">
-<tr>
-<th>Subject</th>
-<th>Grade</th>
-</tr>
+<tr><th>Subject</th><th>Grade</th></tr>
 <tr><td>Technical Communication</td><td>BC</td></tr>
 <tr><td>Probability & Statistics</td><td>CC</td></tr>
 <tr><td>Data Structures</td><td>AA</td></tr>
 <tr><td>DBMS</td><td>BB</td></tr>
 <tr><td>Digital Fundamentals</td><td>BC</td></tr>
 </table>
+<p class="spi">SPI: 8.30</p>
 </div>
 
 <!-- SEM 4 -->
-<div id="sem4" class="tab-content">
+<div id="content4" class="tab-content">
 <h2>Semester 4</h2>
 <table class="result-table">
-<tr>
-<th>Subject</th>
-<th>Grade</th>
-</tr>
+<tr><th>Subject</th><th>Grade</th></tr>
 <tr><td>Operating System</td><td>BC</td></tr>
 <tr><td>OOP</td><td>AB</td></tr>
 <tr><td>Computer Organization</td><td>BB</td></tr>
 <tr><td>Discrete Mathematics</td><td>BC</td></tr>
 <tr><td>Software Engineering</td><td>CC</td></tr>
 </table>
+<p class="spi">SPI: 8.20</p>
 </div>
 
 <!-- SEM 5 -->
-<div id="sem5" class="tab-content">
+<div id="content5" class="tab-content">
 <h2>Semester 5</h2>
 <table class="result-table">
-<tr>
-<th>Subject</th>
-<th>Grade</th>
-</tr>
+<tr><th>Subject</th><th>Grade</th></tr>
 <tr><td>Design Engineering</td><td>AA</td></tr>
 <tr><td>ADA</td><td>AB</td></tr>
 <tr><td>Computer Networks</td><td>BB</td></tr>
 <tr><td>Software Engineering</td><td>BC</td></tr>
 <tr><td>Python for Data Science</td><td>BC</td></tr>
 </table>
+<p class="spi">SPI: 8.45</p>
 </div>
 
-<!-- JS -->
-<script>
-function openTab(tabId) {
-    let contents = document.querySelectorAll(".tab-content");
-    let buttons = document.querySelectorAll(".tab-btn");
+</div>
 
-    contents.forEach(c => c.classList.remove("active"));
-    buttons.forEach(b => b.classList.remove("active"));
-
-    document.getElementById(tabId).classList.add("active");
-    event.target.classList.add("active");
-}
-</script>
+<!-- CGPA -->
+<section>
+    <h2>Overall Performance</h2>
+    <p class="spi">CGPA: 8.18</p>
+</section>
 
 </body>
 </html>
